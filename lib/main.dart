@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:metamask/metamask.dart';
 import 'package:metamsk_login/metamask.dart';
+import 'package:metamsk_login/splash.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -16,10 +17,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: const MyHomePage(),
+      home: Splash(),
+      // home: const MyHomePage(),
     );
   }
 }
+
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -35,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
       create: (context) => MetaMaskProvider()..init(),
       builder: (context, child) {
         return Scaffold(
+
           backgroundColor: const Color(0xFF181818),
           body: Stack(
             children: [
